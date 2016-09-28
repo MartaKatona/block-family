@@ -3,16 +3,14 @@
 @import 'partials/clearfix';
 
 // Variables
-$dark-color: #034f84;
-$light-color: orange;
-$bright-color: #ffff00;
+$dark-color: #50394c;
+$light-color: #ffcc5c;
+$bright-color: #ff00ff;
 $padding: 20px;
+$selected: white;
 
 // Media Query Ranges
 @media screen and (min-width: 0px) {  // why should we need the min-width instead of max-width???
-    body {
-        background-color: orange;  //#ffcc00
-    }
     .block_family {
       max-width: 300px;
     }
@@ -21,13 +19,11 @@ $padding: 20px;
     }
 }
 @media screen and (min-width: 600px) {  // why should we need the min-width instead of max-width???
-    body {
-        background-color: #ffcc00;
-    }
     .block_family {
       max-width: 500px;
       li:nth-of-type(even){
-        background-color: white;
+        background-color: $selected;
+        color: $bright-color;
       }
     }
     .block_family li{
@@ -35,19 +31,19 @@ $padding: 20px;
     }
 }
 @media screen and (min-width: 900px) {  // why should we need the min-width instead of max-width???
-    body {
-        background-color: #ffcc99;
-    }
     .block_family {
       max-width: 800px;
       li:nth-of-type(3n+2){
-        background-color: black;
+        background-color: $selected;
+        color: $bright-color;
       }
       li:nth-of-type(3n+1){
         background-color: $dark-color;
+        color: $light-color;
       }
       li:nth-of-type(3n+3){
         background-color: $dark-color;
+        color: $light-color;
       }
     }
     .block_family li{
@@ -63,7 +59,7 @@ $padding: 20px;
 
 // Styles
 body{
-  //background-color: $light-color;
+  background-color: $light-color;
   text-align: center;
   color: $bright-color;  //#EEE;
 }
@@ -74,6 +70,9 @@ h1, h2, h3, h4{
 
 h1{
   padding: $padding;
+  color: #50394c;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 h2{
@@ -84,7 +83,7 @@ h2{
 .block_family{
   //max-width: 350px;
   margin:auto;
-  @include block_font(25px,#ff00ff);
+  @include block_font(25px,#ffcc5c);
 }
 
 .block_family li{
